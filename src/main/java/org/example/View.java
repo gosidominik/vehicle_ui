@@ -31,7 +31,7 @@ public class View {
             }
                 if (input.equals("l")) {
                 System.out.println("Add meg a keresett rendszámot: ");
-                vehicleController.getVehicleById(ViewModelParser.createRequestJson(viewScanner.nextLine()));
+                vehicleController.getVehicleById(ViewModelParser.createFindRequestJson(viewScanner.nextLine()));
             }
             }
         }

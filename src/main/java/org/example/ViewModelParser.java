@@ -18,7 +18,7 @@ public static JSONObject createSaveRequestJson(VehicleViewModel viewModel) {
 return json;
 }
 
-public static JSONObject createRequestJson(String s) {
+public static JSONObject createFindRequestJson(String s) {
     JSONObject json = new JSONObject();
     try {
         json.put("registrationNumber", s);

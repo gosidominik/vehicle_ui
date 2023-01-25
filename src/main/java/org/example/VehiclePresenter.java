@@ -11,8 +11,8 @@ public class VehiclePresenter implements VehicleResponseInterface {
     }
 
     @Override
-    public void displaySave(JSONObject jsonObject) {
-        VehicleViewModel vehicleViewModel = ViewModelParser.parseResponseJsonToViewModel(jsonObject);
+    public void displaySave(JSONObject json) {
+        VehicleViewModel vehicleViewModel = ViewModelParser.parseResponseJsonToViewModel(json);
         View.display(vehicleViewModel);
     }
 }

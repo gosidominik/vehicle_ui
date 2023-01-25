@@ -1,19 +1,16 @@
 package org.example;
 
 import org.example.controller.VehicleRequestInterface;
-import org.json.JSONObject;
 
-public class VehicleController implements VehicleRequestInterface {
+public class VehicleController {
 
     public VehicleRequestInterface vehicleRequestInterface;
-    @Override
-    public void getVehicleById(JSONObject json) {
-        this.vehicleRequestInterface.getVehicleById(json);
+    public void getVehicle(String id) {
+        this.vehicleRequestInterface.getVehicleById(ViewModelParser.createFindRequestJson(id).toString());
     }
 
-    @Override
-    public void save(JSONObject vehicleJson) {
-        this.vehicleRequestInterface.save(vehicleJson);
+    public void save(VehicleViewModel viewModel) {
+        this.vehicleRequestInterface.save(ViewModelParser.createSaveRequestJson(viewModel).toString());
     }
 
     public VehicleRequestInterface getVehicleRequestInterface() {

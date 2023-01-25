@@ -27,11 +27,11 @@ public class View {
                 viewModel.setNumberOfSeats(viewScanner.nextLine());
                 System.out.println("Add meg a kategóriát: ");
                 viewModel.setVehicleType(viewScanner.nextLine());
-                vehicleController.save(ViewModelParser.createSaveRequestJson(viewModel));
+                vehicleController.save(viewModel);
             }
                 if (input.equals("l")) {
                 System.out.println("Add meg a keresett rendszámot: ");
-                vehicleController.getVehicleById(ViewModelParser.createFindRequestJson(viewScanner.nextLine()));
+                vehicleController.getVehicle(viewScanner.nextLine());
             }
             }
         }

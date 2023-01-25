@@ -35,4 +35,7 @@ public class View {
             }
             }
         }
+        public static void display(VehicleViewModel viewModel) {
+            System.out.println(viewModel.getMessage());
+        }
     }

@@ -31,12 +31,17 @@ public static JSONObject createFindRequestJson(String s) {
 public static VehicleViewModel parseResponseJsonToViewModel(JSONObject json) {
     VehicleViewModel vehicleViewModel = new VehicleViewModel();
     try {
-        vehicleViewModel.setModel(json.getString("model"));
-        vehicleViewModel.setMake(json.getString("make"));
-        vehicleViewModel.setVehicleType(json.getString("vehicleType"));
-        vehicleViewModel.setRegistrationNumber(json.getString("registrationNumber"));
-        vehicleViewModel.setNumberOfSeats(json.getString("numberOfSeats"));
-        vehicleViewModel.setMessage(json.getString("message"));
+        if (!json.getString("message").equals("Kötelező rendszámot megadni!")) {
+            vehicleViewModel.setModel(json.getString("model"));
+            vehicleViewModel.setMake(json.getString("make"));
+            vehicleViewModel.setVehicleType(json.getString("vehicleType"));
+            vehicleViewModel.setRegistrationNumber(json.getString("registrationNumber"));
+            vehicleViewModel.setNumberOfSeats(json.getString("numberOfSeats"));
+            vehicleViewModel.setMessage(json.getString("message"));
+        } else {
+            vehicleViewModel.setMessage(json.getString("message"));
+        }
+
     } catch (JSONException e) {
         e.printStackTrace();
     }
